@@ -117,9 +117,9 @@ void setupESPUI (void) {
   Serial.print( "IP address: " );
   Serial.println( WiFi.getMode() == WIFI_AP ? WiFi.softAPIP() : WiFi.localIP() );
 
-  uint16_t tab1 = ESPUI.addControl( ControlType::Tab, "Управление", "Управление");
-  uint16_t tab2 = ESPUI.addControl( ControlType::Tab, "Параметры", "Параметры");
-  uint16_t tab3 = ESPUI.addControl( ControlType::Tab, "Статистика", "Статистика");
+  uint16_t tab1 = ESPUI.addControl( ControlType::Tab, "Control", "Control");
+  uint16_t tab2 = ESPUI.addControl( ControlType::Tab, "Params", "Params");
+  uint16_t tab3 = ESPUI.addControl( ControlType::Tab, "Stats", "Stats");
   //uint16_t tab1 = ESPUI.addControl( ControlType::Tab, "Settings 1", "Settings 1" );
  // uint16_t tab2 = ESPUI.addControl( ControlType::Tab, "Settings 2", "Settings 2" );
 //  uint16_t tab3 = ESPUI.addControl( ControlType::Tab, "Settings 3", "Settings 3" );
@@ -135,7 +135,7 @@ void setupESPUI (void) {
   
   freeHeapCTL = ESPUI.addControl (ControlType::Label, "Free Heap:", "0", ControlColor::Emerald, tab3);
 
-  button1 = ESPUI.addControl( ControlType::Button, "Обновить прошивку", "Press", ControlColor::Peterriver, tab2, &buttonCallback );
+  button1 = ESPUI.addControl( ControlType::Button, "Update firmware", "Press", ControlColor::Peterriver, tab2, &buttonCallback );
 /*  ESPUI.addControl( ControlType::Button, "Other Button", "Press", ControlColor::Wetasphalt, tab1, &buttonExample );
   switchOne = ESPUI.addControl( ControlType::Switcher, "Switch one", "", ControlColor::Alizarin, tab3, &switchExample );
   ESPUI.addControl( ControlType::Slider, "Slider one", "30", ControlColor::Alizarin, tab1, &slider );
